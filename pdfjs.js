@@ -396,7 +396,7 @@ function getPDF() {
 /* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
 
-var PDFJS = {};
+global.PDFJS = {};
 
 (function pdfjsWrapper() {
   // Use strict in our context only - users might not want it
@@ -421,7 +421,7 @@ var verbosity = WARNINGS;
 // In production, it will be declared outside a global wrapper
 // In development, it will be declared here
 if (!globalScope.PDFJS) {
-  globalScope.PDFJS = {};
+  globalScope.PDFJS = global.PDFJS;
 }
 
 // getPdf()
@@ -30443,7 +30443,7 @@ var JpegImage = (function jpegImage() {
                 huffmanValues[j] = data[offset];
               i += 17 + codeLengthSum;
 
-              ((huffmanTableSpec >> 4) === 0 ? 
+              ((huffmanTableSpec >> 4) === 0 ?
                 huffmanTablesDC : huffmanTablesAC)[huffmanTableSpec & 15] =
                 buildHuffmanTable(codeLengths, huffmanValues);
             }

@@ -61,7 +61,8 @@ format_80col("function InitializeZlibBenchmark() {" +
              "}")
 # ----------------------- END GENERATOR SCRIPT ---------------------
 */
-
+global.print = console.log;
+global.read = console.log;
 function InitializeZlibBenchmark() {zlibEval('function j(a){throw a;}var k=\
 void 0,n=!0,r=null,t=!1;function u(){return function(){}}try{this.Module=Module\
 ,Module.test}catch(aa){this.Module=Module={}}var ba="object"===typeof process&&\
@@ -2407,3 +2408,5 @@ meout(function(){setTimeout(function(){Module.setStatus("")},1);G||b()},1),0):b\
 ()}Module.run=Module.X=Ya;if(Module.preInit)for("function"==typeof Module.preIn\
 it&&(Module.preInit=[Module.preInit]);0<Module.preInit.length;)Module.preInit.p\
 op()();var Xa=n;Module.noInitialRun&&(Xa=t); ');}
+
+global.InitializeZlibBenchmark = InitializeZlibBenchmark;

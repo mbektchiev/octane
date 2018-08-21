@@ -65,7 +65,7 @@ var expectedGameboyStateStr =
 
 // Start of browser emulation.
 
-var GameBoyWindow = { };
+global.GameBoyWindow = { };
 
 function GameBoyContext() {
   this.createBuffer = function() {
@@ -87,7 +87,7 @@ function GameBoyContext() {
   this.drawImage = function () { }
 };
 
-function GameBoyCanvas() {
+global.GameBoyCanvas = function GameBoyCanvas() {
   this.getContext = function() {
     return new GameBoyContext();
   }
@@ -96,7 +96,7 @@ function GameBoyCanvas() {
   this.style = { visibility: "visibile" };
 }
 
-function cout(message, colorIndex) {
+global.cout = function cout(message, colorIndex) {
 }
 
 function clear_terminal() {
@@ -140,7 +140,7 @@ function GameBoyAudioContext () {
 
 var mock_date_time_counter = 0;
 
-function new_Date() {
+global.new_Date = function new_Date() {
   return {
     getTime: function() {
       mock_date_time_counter += 16;
@@ -153,7 +153,7 @@ function new_Date() {
 
 // Start of helper functions.
 
-function checkFinalState() {
+global.checkFinalState = function checkFinalState() {
   function sum(a) {
     var result = 0;
     for (var i = 0; i < a.length; i++) {
@@ -188,7 +188,7 @@ function checkFinalState() {
 }
 
 
-function resetGlobalVariables () {
+global.resetGlobalVariables = function resetGlobalVariables () {
   //Audio API Event Handler:
   audioContextHandle = null;
   audioNode = null;

@@ -1524,7 +1524,7 @@ function runClosure() {
   })();
 }
 
-function MockElement() {
+global.MockElement = function MockElement() {
   this.appendChild = function(a) {};
   this.createComment = function(a) {};
   this.createDocumentFragment = function() { return new MockElement(); };
